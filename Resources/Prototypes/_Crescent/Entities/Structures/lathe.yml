@@ -251,7 +251,7 @@
   - type: Lathe
     idleState: fab-idle
     runningState: fab-active
-    staticRecipes:
+    staticPacks:
       - BaseCartridgeRailgun15mm
       - MagazineClip18gBuck
       - MagazinePulse470Fmj
@@ -357,7 +357,7 @@
       - ClothingHeadHelmetEVALarge # Frontier
       - TradebandTranslator
       - ClothingBeltSalvageWebbing
-    dynamicRecipes:
+    dynamicPacks:
       - CreoleTranslator
       - LowImperialTranslator
       - FreespeakTranslator
@@ -400,7 +400,6 @@
       - PortableGeneratorPacmanMachineCircuitboard
       - PortableGeneratorSuperPacmanMachineCircuitboard
       - PortableGeneratorJrPacmanMachineCircuitboard
-      - PowerComputerCircuitboard #the actual solar panel itself should be in here
       - SolarControlComputerCircuitboard
       - SolarTrackerElectronics
       - EmitterCircuitboard
@@ -419,7 +418,6 @@
       - PowerDrill
       - JawsOfLife
       - BorgModuleAdvancedTool
-      - BorgModuleRCD
       - OreBagOfHolding
       - MiningDrillDiamond
       - MechEquipmentDrillDiamond
