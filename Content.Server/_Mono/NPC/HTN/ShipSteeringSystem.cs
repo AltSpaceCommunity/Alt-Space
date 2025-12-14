@@ -170,7 +170,15 @@ public sealed partial class ShipSteeringSystem : EntitySystem
         // try avoid collisions
         if (minObstructorDistance != null && brakeAccel > 0)
         {
+<<<<<<< HEAD
             var shipAABB = shipGrid.LocalAABB.Enlarged(4f); // enlarge a bit for safety
+||||||| parent of 3cbd8af337a (enlarge more)
+            brakePath = brakeAccel == 0f ? maxObstructorDistance : MathF.Min(maxObstructorDistance, brakePath);
+            var shipAABB = shipGrid.LocalAABB.Enlarged(12f); // enlarge a bit for safety
+=======
+            brakePath = brakeAccel == 0f ? maxObstructorDistance : MathF.Min(maxObstructorDistance, brakePath);
+            var shipAABB = shipGrid.LocalAABB.Enlarged(64f); // enlarge a bit to get more grids
+>>>>>>> 3cbd8af337a (enlarge more)
             var shipPosVec = shipPos.Position;
             var localBrakeBounds = shipAABB.ExtendToContain(new Vector2(0, brakePath + 50f)); // check extra distance
             var brakeBounds = new Box2(localBrakeBounds.BottomLeft + shipPosVec, localBrakeBounds.TopRight + shipPosVec);
