@@ -332,8 +332,8 @@
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
   - type: Gun
-    fireRate: 10
     fireRate: 14
+    #someone had firerate 10 duplicate here too.
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/smg_3/smg_gunshot_2.ogg
     fireOnDropChance: 0.3
