@@ -399,7 +399,7 @@
   - type: Item
     size: Normal
   - type: Sprite
-    sprite: _Crescent\Objects\Turrets\Ammunition\Magazine\corpus.rsi
+    sprite: _Crescent/Objects/Turrets/Ammunition/Magazine/corpus.rsi
     state: base
   - type: Tag
     tags:
@@ -424,14 +424,7 @@
     size: Normal
   - type: Sprite
     sprite: _Crescent/Objects/Turrets/Ammunition/Magazine/gistum.rsi
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-  - type: MagazineVisuals
-    magState: mag
-    steps: 6
+    state: base
   - type: Tag
     tags:
       - GistumClip
@@ -453,14 +446,7 @@
     size: Normal
   - type: Sprite
     sprite: _Crescent/Objects/Turrets/Ammunition/Magazine/gistum.rsi
-    layers:
-    - state: base-gyrostable
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-  - type: MagazineVisuals
-    magState: mag
-    steps: 6
+    state: base-gyrostable
   - type: Tag
     tags:
       - GistumClip
@@ -482,14 +468,7 @@
     size: Normal
   - type: Sprite
     sprite: _Crescent/Objects/Turrets/Ammunition/Magazine/gistum.rsi
-    layers:
-    - state: base-plasma
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-  - type: MagazineVisuals
-    magState: mag
-    steps: 6
+    state: base-plasma
   - type: Tag
     tags:
       - GistumClip
