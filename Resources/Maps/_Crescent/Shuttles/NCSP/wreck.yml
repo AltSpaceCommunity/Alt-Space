@@ -681,7 +681,7 @@ entities:
       parent: 1
     - type: IFFConsole
       allowColorChange: True
-- proto: C_ComputerTabletopShuttle
+- proto: ComputerTabletopShuttle
   entities:
   - uid: 105
     components:

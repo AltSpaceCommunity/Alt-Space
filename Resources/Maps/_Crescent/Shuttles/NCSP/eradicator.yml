@@ -3363,7 +3363,7 @@ entities:
     - type: DeviceNetwork
       configurators:
       - invalid
-- proto: C_ComputerShuttle
+- proto: ComputerShuttle
   entities:
   - uid: 468
     components:

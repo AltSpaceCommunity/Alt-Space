@@ -5236,7 +5236,7 @@ entities:
       containers:
         board: !type:Container
           ents: []
-- proto: C_ComputerShuttle
+- proto: ComputerShuttle
   entities:
   - uid: 662
     components:

@@ -752,7 +752,7 @@ entities:
           ents:
           - 68
           - 67
-- proto: C_ComputerShuttle
+- proto: ComputerShuttle
   entities:
   - uid: 69
     components:
