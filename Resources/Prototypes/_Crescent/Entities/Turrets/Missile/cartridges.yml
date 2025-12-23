@@ -208,3 +208,53 @@
   - type: SpentAmmoVisuals
   - type: StaticPrice
     price: 250
+
+#gargoyle
+
+- type: entity
+  id: Cartridge240mmRocket
+  name: 240mm heat-seeking heavy torpedo
+  description: A massive, bulky torpedo with an inbuilt tracking and course correction system. It's slow speed allows it to phase through deflector bubbles. Slow and easy to shoot down.
+  parent: BaseCartridge
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - CartridgeGargoyle
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: ProjectileGargoyle
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Cartridge/gargoyle.rsi
+    layers:
+    - state: gargoyle
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: MultiHandedItem
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  id: Cartridge240mmRocketNCWL
+  name: homeguard-issue 240mm heat-seeking heavy torpedo
+  description: A massive, bulky torpedo with an inbuilt tracking and course correction system. It's slow speed allows it to phase through deflector bubbles. Slow and easy to shoot down. This one seems to be issued by the Union Homeguard, upgraded in all aspects.
+  parent: BaseCartridge
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - CartridgeGargoyle
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: ProjectileGargoyleNCWL
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Cartridge/gargoyle.rsi
+    layers:
+    - state: ncwlgargoyle
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: MultiHandedItem
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 250

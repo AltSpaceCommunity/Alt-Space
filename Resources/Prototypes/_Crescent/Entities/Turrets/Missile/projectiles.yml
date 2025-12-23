@@ -504,3 +504,145 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:ExplodeBehavior
+
+#gargoyle
+
+- type: entity
+  id: ProjectileGargoyle
+  name: 240mm heatseeking heavy torpedo
+  description: Shit.
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 6000
+        Blunt: 400
+  - type: Tag
+    tags:
+      - TorpedoGarg
+  - type: TimedDespawn
+    lifetime: 50
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Projectiles/gargoyle.rsi
+    layers:
+      - state: gargoylefired
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 40000
+    intensitySlope: 225
+    maxIntensity: 3000
+  - type: HeatSeeking
+    rotationSpeed: 7 # slow turn rate
+    acceleration: 5
+    topSpeed: 40
+    fieldOfView: 30
+    defaultSeekingRange: 1500 # long range
+    guidanceAlgorithm: PredictiveGuidance
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ProjectileIFF
+    visualType: SquareReticle
+    color: Red
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.65,0.25,0.65"
+        layer:
+        - BulletImpassable
+        mask:
+        - Impassable
+        - BulletImpassable
+        hard: true
+      fly-by: *flybyfixture
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ExplodeBehavior
+  - type: IgnoresHullrotShields
+
+- type: entity
+  id: ProjectileGargoyleNCWL
+  name: homeguard-issue 240mm heatseeking heavy torpedo
+  description: Shit.
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 6500
+        Blunt: 400
+  - type: Tag
+    tags:
+      - TorpedoGarg
+  - type: TimedDespawn
+    lifetime: 50
+  - type: Sprite
+    sprite: _Crescent/Objects/Turrets/Ammunition/Projectiles/gargoyle.rsi
+    layers:
+      - state: ncwlgargoylefired
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 42500
+    intensitySlope: 220
+    maxIntensity: 3500
+  - type: HeatSeeking
+    rotationSpeed: 9 # slow turn rate
+    acceleration: 6
+    topSpeed: 45
+    fieldOfView: 35
+    defaultSeekingRange: 2500 # long range
+    guidanceAlgorithm: PredictiveGuidance
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ProjectileIFF
+    visualType: SquareReticle
+    color: Red
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.65,0.25,0.65"
+        layer:
+        - BulletImpassable
+        mask:
+        - Impassable
+        - BulletImpassable
+        hard: true
+      fly-by: *flybyfixture
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 175
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ExplodeBehavior
+  - type: IgnoresHullrotShields
