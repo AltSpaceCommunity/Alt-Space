@@ -519,13 +519,10 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Structural: 6000
-        Blunt: 400
-  - type: Tag
-    tags:
-      - TorpedoGarg
+        Structural: 275
+        Blunt: 60
   - type: TimedDespawn
-    lifetime: 25
+    lifetime: 12
   - type: Sprite
     sprite: _Crescent/Objects/Turrets/Ammunition/Projectiles/gargoyle.rsi
     layers:
@@ -533,16 +530,10 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 40000
-    intensitySlope: 225
-    maxIntensity: 3000
-  - type: HeatSeeking
-    rotationSpeed: 7 # slow turn rate
-    acceleration: 5
-    topSpeed: 40
-    fieldOfView: 30
-    defaultSeekingRange: 1500 # long range
-    guidanceAlgorithm: PredictiveGuidance
+    maxIntensity: 5000
+    intensitySlope: 200
+    totalIntensity: 5000
+    maxTileBreak: 10
   - type: PointLight
     radius: 3.5
     color: orange
@@ -550,19 +541,26 @@
   - type: ProjectileIFF
     visualType: SquareReticle
     color: Red
+  - type: HeatSeeking
+    rotationSpeed: 10
+    acceleration: 25
+    topSpeed: 80
+    fieldOfView: 75
+    defaultSeekingRange: 1000
+    guidanceAlgorithm: PurePursuit
   - type: Fixtures
     fixtures:
       projectile:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.25,-0.65,0.25,0.65"
+          bounds: "-0.25,-0.45,0.25,0.25"
         layer:
         - BulletImpassable
         mask:
         - Impassable
         - BulletImpassable
         hard: true
-      fly-by: *flybyfixture
+        density: 100
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallic
@@ -589,13 +587,10 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Structural: 6500
-        Blunt: 400
-  - type: Tag
-    tags:
-      - TorpedoGarg
+        Structural: 275
+        Blunt: 60
   - type: TimedDespawn
-    lifetime: 25
+    lifetime: 15
   - type: Sprite
     sprite: _Crescent/Objects/Turrets/Ammunition/Projectiles/gargoyle.rsi
     layers:
@@ -603,16 +598,10 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 42500
-    intensitySlope: 220
-    maxIntensity: 3500
-  - type: HeatSeeking
-    rotationSpeed: 9 # slow turn rate
-    acceleration: 6
-    topSpeed: 45
-    fieldOfView: 35
-    defaultSeekingRange: 2500 # long range
-    guidanceAlgorithm: PredictiveGuidance
+    maxIntensity: 5000
+    intensitySlope: 200
+    totalIntensity: 5000
+    maxTileBreak: 12
   - type: PointLight
     radius: 3.5
     color: orange
@@ -620,19 +609,26 @@
   - type: ProjectileIFF
     visualType: SquareReticle
     color: Red
+  - type: HeatSeeking
+    rotationSpeed: 12
+    acceleration: 35
+    topSpeed: 85
+    fieldOfView: 75
+    defaultSeekingRange: 3000
+    guidanceAlgorithm: PredictiveGuidance
   - type: Fixtures
     fixtures:
       projectile:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.25,-0.65,0.25,0.65"
+          bounds: "-0.25,-0.45,0.25,0.25"
         layer:
         - BulletImpassable
         mask:
         - Impassable
         - BulletImpassable
         hard: true
-      fly-by: *flybyfixture
+        density: 100
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallic
@@ -640,7 +636,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 175
+        damage: 200
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -661,31 +657,21 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Structural: 8000
-        Blunt: 400
-  - type: Tag
-    tags:
-      - TorpedoGarg
+        Structural: 275
+        Blunt: 60
   - type: TimedDespawn
-    lifetime: 50
+    lifetime: 25
   - type: Sprite
-    sprite: _Crescent/Objects/Turrets/Ammunition/Projectiles/gargoyle.rsi
+    sprite: _Crescent/Objects/Turrets/Ammunition/Projectiles/catapult.rsi
     layers:
-      - state: ncwlgargoylefired
+      - state: catapult
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 55000
-    intensitySlope: 200
-    maxIntensity: 5000
-    maxTileBreak: 10
-  - type: HeatSeeking
-    rotationSpeed: 12 # slow turn rate
-    acceleration: 25
-    topSpeed: 60
-    fieldOfView: 35
-    defaultSeekingRange: 3500 # long range
-    guidanceAlgorithm: PredictiveGuidance
+    maxIntensity: 12500
+    intensitySlope: 400
+    totalIntensity: 12500
+    maxTileBreak: 20
   - type: PointLight
     radius: 3.5
     color: orange
@@ -693,19 +679,26 @@
   - type: ProjectileIFF
     visualType: SquareReticle
     color: Red
+  - type: HeatSeeking
+    rotationSpeed: 8
+    acceleration: 10
+    topSpeed: 90
+    fieldOfView: 50
+    defaultSeekingRange: 5000
+    guidanceAlgorithm: PredictiveGuidance
   - type: Fixtures
     fixtures:
       projectile:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.25,-0.65,0.25,0.65"
+          bounds: "-0.25,-0.45,0.25,0.25"
         layer:
         - BulletImpassable
         mask:
         - Impassable
         - BulletImpassable
         hard: true
-      fly-by: *flybyfixture
+        density: 100
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallic
@@ -713,7 +706,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 175
+        damage: 300
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
