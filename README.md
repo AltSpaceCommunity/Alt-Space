@@ -1,54 +1,78 @@
-# Sector Crescent - Hullrot 
+<div align="center">
 
-<p align="center"> <img alt="Sector Crescent" width="880" height="300" src="https://github.com/ilikeships/Sector-Crescent/blob/master/Resources/Textures/Logo/logo.png?raw=true" /></p>
+# 🌌 Alt-Space
+**✨ Далёкий тёмный космос... ✨**
 
-This is the Main Repository of the Hullrot Server. Hullrot is a spin on classic SS14 prioritizing persistance, ship-combat , immersion and a more serious tone than other SS14 servers.
+[![GitHub License](https://img.shields.io/github/license/pe4henika/alt-space?style=for-the-badge)](./LEGAL_RU.md)  [![.NET](https://img.shields.io/badge/.NET-9.0-512BD4?&style=for-the-badge)](https://dotnet.microsoft.com/)  [![Discord](https://img.shields.io/badge/Discord-Join%20Server-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/JpFnEZ99WG)
 
-License-wise, for any code in the Hullrot Folder , it has been licensed to AGPL, with files that have alternative licenses being denoted so through comments at the top.
+[📄 Лицензия](./LEGAL-RU.md) • [💬 Discord](https://discord.gg/JpFnEZ99WG) • [English](./README-EN.md)
 
-Most sprite assets in the Hullrot Folder are propietary, meaning do not redistribute , do not relicense , do not use and do not modify.The Ported folders are exempt from this.Other exemptions are explicity mentioned in the json of the RSI assets.
+</div>
 
 ---
 
-## Links
-Hullrot Discord - https://discord.gg/e6n9n9xgHN
-## Contributing
-Before contributing , you are advised to consult either the Head Maintainer or the Project Lead over on the Hullrot Discord.
+## ⚙️ О Alt-Space
 
-If you are new to programming in SS14 as a whole , you are advised to check out the #ss14-coding-crashcourse channel.
+**Alt-Space** — это форк оригинального англоязычного проекта [HULLROT](https://github.com/Sector-Crescent/Hullrot),  
+многопользовательского космического симулятора, работающего на движке **Robust Toolbox**.  
 
-If you are experienced or wish to work on pre-approved content , we have a list available in the #dev-roadmaps channel.
+Проект создаётся как эксперимент **русскоязычного сообщества энтузиастов**.  
+Alt-Space не стремится повторять ванильный опыт, а предлагает **своё уникальное видение событий в космосе**.  
 
-We aren't as strict on Coding Standards as other SS14 servers , our review methodology takes into account how "performant" something needs to be, altough a few aspects should be kept in mind
-- any code that is performance-significant is expected to be performant
-- you are expected to write secure code
-- you are expected to TEST your own code and ensure it works to a reasonable level
-- do not leave behind old-code or code with no functionality
-- you are expected to credit the source if you are porting content through a comment in the file(for code) or meta.json(for RSIs)
-- do not mix unrelated balance changes with normal PR's.
+> ⚠️ **Важно:** проект в первую очередь экспериментальный!
 
-### Build dependencies
+---
 
-> - Git
-> - .NET SDK 9.0.101
+## 🚀 Быстрый старт
 
+### 🔧 Требования
 
-### Windows
+- **Git** — <https://git-scm.com/downloads>  
+- **.NET SDK 9.0.101 или выше** — <https://dotnet.microsoft.com/download/dotnet/9.0>  
 
-> 1. Clone this repository
-> 2. Run `git submodule update --init --recursive` in a terminal to download the engine
-> 3. Run `Scripts/bat/buildAllRelease.bat` after making any changes to the source
-> 4. Run `Scripts/bat/runQuickAll.bat` to launch the client and the server
-> 5. Connect to localhost in the client and play
+---
 
-### Linux / MAC
+### 🪟 Windows
 
-> 1. Clone this repository
-> 2. Run `git submodule update --init --recursive` in a terminal to download the engine
-> 3. Run `Scripts/sh/buildAllRelease.sh` after making any changes to the source
-> 4. Run `Scripts/sh/runQuickAll.sh` to launch the client and the server
-> 5. Connect to localhost in the client and play
+```bash
+# 1️⃣ Клонируйте репозиторий
+git clone https://github.com/Pe4henika/Alt-Space.git
+cd Alt-Space
 
-## License
+# 2️⃣ Загрузите подмодули движка
+git submodule update --init --recursive
 
-Please read the [LEGAL.md](./LEGAL.md) file for information on the licenses of the code and assets in this repository.
+# 3️⃣ Соберите проект
+Scripts\bat\buildAllRelease.bat
+
+# 4️⃣ Запустите клиент и сервер
+Scripts\bat\runQuickAll.bat
+```
+### 🐧 Linux
+
+```bash
+# 1️⃣ Клонируйте репозиторий
+git clone https://github.com/Pe4henika/Alt-Space.git
+cd Alt-Space
+
+# 2️⃣ Загрузите подмодули движка
+git submodule update --init --recursive
+
+# 3️⃣ Соберите проект
+chmod +x Scripts/sh/buildAllRelease.sh
+Scripts/sh/buildAllRelease.sh
+
+# 4️⃣ Запустите клиент и сервер
+chmod +x Scripts/sh/runQuickAll.sh
+Scripts/sh/runQuickAll.sh
+```
+> 💡 **Совет:** после запуска клиента подключайтесь к localhost, чтобы начать игру.
+
+---
+## 📜 Лицензия
+
+Информация о лицензиях кода и ассетов содержится в файле:  
+[LEGAL_RU.md](./LEGAL_RU.md)
+[LEGAL.md](./LEGAL.md) 
+
+> ⚖️ Код распространяется под **GNU AGPLv3**, ассеты — в основном **CC-BY-SA 3.0**.
