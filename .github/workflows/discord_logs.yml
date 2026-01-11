@@ -1,84 +1,85 @@
-name: Full Repository Activity Logger (Discord Embed)
+name: Discord Logs
 
 on:
   push:
-    branches:
-      - '**'
   pull_request:
-    types: [opened, closed, reopened, merged, synchronize]
+  create:
+  delete:
+  fork:
   issues:
-    types: [opened, edited, closed, reopened]
   issue_comment:
-    types: [created, edited, deleted]
   release:
-    types: [published, edited, prereleased, deleted]
-  create:  # новая ветка или тег
-  delete:  # удаление ветки или тега
-  watch:   # подписка / star
-  workflow_run:
-    types: [completed]
+  public:
+  workflow_dispatch:
 
 jobs:
   log_to_discord:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    - name: Checkout repo
+      uses: actions/checkout@v3
 
-      - name: Prepare Discord Embed
-        id: discord_embed
-        run: |
-          EVENT_TYPE="${{ github.event_name }}"
-          REPO="${{ github.repository }}"
-          USER="${{ github.actor }}"
-          AVATAR="https://github.com/${USER}.png"
-          
-          # Ссылка на объект
-          URL=""
-          case "$EVENT_TYPE" in
-            push) URL="${{ github.event.head_commit.url }}" ;;
-            pull_request) URL="${{ github.event.pull_request.html_url }}" ;;
-            issues) URL="${{ github.event.issue.html_url }}" ;;
-            issue_comment) URL="${{ github.event.comment.html_url }}" ;;
-            release) URL="${{ github.event.release.html_url }}" ;;
-            create) URL="https://github.com/${REPO}/tree/${{ github.ref_name }}" ;;
-            delete) URL="https://github.com/${REPO}/tree/${{ github.ref_name }}" ;;
-          esac
+    - name: Send event to Discord
+      uses: actions/github-script@v6
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const discordWebhook = process.env.DISCORD_WEBHOOK;
+          if (!discordWebhook) {
+            core.setFailed("DISCORD_WEBHOOK is not set!");
+          }
 
-          # Цвет Embed для разных событий
-          COLOR="3447003"
-          case "$EVENT_TYPE" in
-            push) COLOR="3066993" ;;
-            pull_request) COLOR="15105570" ;;
-            issues) COLOR="15844367" ;;
-            issue_comment) COLOR="15844367" ;;
-            release) COLOR="10181046" ;;
-            create) COLOR="3066993" ;;
-            delete) COLOR="15105570" ;;
-            watch) COLOR="15844367" ;;
-            workflow_run) COLOR="10181046" ;;
-          esac
+          const eventName = process.env.GITHUB_EVENT_NAME;
+          const payload = require(process.env.GITHUB_EVENT_PATH);
 
-          TITLE="[$EVENT_TYPE] в репозитории $REPO"
-          DESCRIPTION="Пользователь: **$USER**"
-          if [ -n "$URL" ]; then
-            DESCRIPTION="$DESCRIPTION\nСсылка: $URL"
-          fi
+          const user = payload.sender?.login || "Unknown";
+          const avatar = payload.sender?.avatar_url || "";
 
-          EMBED=$(jq -n \
-            --arg title "$TITLE" \
-            --arg description "$DESCRIPTION" \
-            --arg author_name "$USER" \
-            --arg author_icon "$AVATAR" \
-            --argjson color $COLOR \
-            '{embeds:[{title:$title, description:$description, color:$color, author:{name:$author_name, icon_url:$author_icon}}]}')
-          
-          echo "embed=$EMBED" >> $GITHUB_OUTPUT
+          let url = "";
+          switch(eventName) {
+            case "push":
+              url = payload.head_commit?.url || "";
+              break;
+            case "pull_request":
+              url = payload.pull_request?.html_url || "";
+              break;
+            case "issues":
+              url = payload.issue?.html_url || "";
+              break;
+            case "issue_comment":
+              url = payload.comment?.html_url || "";
+              break;
+            case "release":
+              url = payload.release?.html_url || "";
+              break;
+            case "create":
+            case "delete":
+              url = `https://github.com/${payload.repository.full_name}/tree/${payload.ref}`;
+              break;
+            case "fork":
+              url = payload.forkee?.html_url || "";
+              break;
+            default:
+              url = payload.repository?.html_url || "";
+          }
 
-      - name: Send to Discord
-        uses: Ilshidur/action-discord@v2
-        with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          message: "Новое событие в репозитории:"
-          embed: ${{ steps.discord_embed.outputs.embed }}
+          const embedPayload = {
+            embeds: [{
+              title: `[${eventName}] в репозитории ${payload.repository?.full_name || "Unknown"}`,
+              description: `Пользователь: **${user}**\nСсылка: ${url}`,
+              color: 3447003,
+              author: {
+                name: user,
+                icon_url: avatar
+              }
+            }]
+          };
+
+          await fetch(discordWebhook, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(embedPayload)
+          });
+      env:
+        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
