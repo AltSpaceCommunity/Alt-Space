@@ -1,62 +1,63 @@
 <!--
-This is a semi-strict format, you can add/remove sections as needed but the order/format should be kept the same
-Remove these comments before submitting
+🌟 Шаблон Pull Request для Alt-Space
+Используйте этот шаблон для удобного описания своих изменений.
+Удалите комментарии перед отправкой.
 -->
 
-# Description
-
-<!--
-Explain this PR in as much detail as applicable
-
-Some example prompts to consider:
-How might this affect the game? The codebase?
-What might be some alternatives to this?
-How/Who does this benefit/hurt [the game/codebase]?
--->
-
-Description.
+<div align="center">
+<h1>Pull Request</h1>
+<i>НАЗВАНИЕ ВАШЕГО PULL REQUEST</i>
+</div>
 
 ---
 
-# TODO
+## Описание моей работы
 
-<!--
-A list of everything you have to do before this PR is "complete"
-You probably won't have to complete everything before merging but it's good to leave future references
+**Общее описание**
+<!-- Опишите, что делает этот PR и зачем
 -->
+**Зачем? / Баланс**
+<!--
+Возможные вопросы:
+- Как это повлияет на игру или кодовую базу?
+- Какие функции добавлены или исправлены?
+- Что улучшено или оптимизировано?
+-->
+---
 
-- [ ] Task
-- [x] Completed Task
+## Проверки перед слиянием
+
+> Отметьте галочкой все пункты, которые вы проверили. Это помогает сохранить качество проекта.
+
+- [ ] Я выполнил `dotnet build` и не получил ни одной ошибки
+- [ ] Я выполнил локальное тестирование сборки без ошибок
+- [ ] Я проверил `.ftl` файлы на наличие грамматических ошибок, если таковые имеются
+- [ ] Я проверил корректность добавленных мной спрайтов, если таковые имеются
 
 ---
 
-<!--
-This is default collapsed, readers click to expand it and see all your media
-The PR media section can get very large at times, so this is a good way to keep it clean
-The title is written using HTML tags
-The title must be within the <summary> tags or you won't see it
--->
+## Медиа / Скриншоты
 
-<details><summary><h1>Media</h1></summary>
+<details><summary>Нажмите, чтобы открыть медиа</summary>
 <p>
 
-![Example Media Embed](https://example.com/thisimageisntreal.png)
+<!-- При необходимости добавьте скриншоты, гифки или видео изменений. СЮДА.
+-->
 
 </p>
 </details>
 
 ---
 
-# Changelog
-
-<!--
-You can add an author after the `:cl:` to change the name that appears in the changelog (ex: `:cl: Death`)
-Leaving it blank will default to your GitHub display name
-This includes all available types for the changelog
+## Журнал изменений (Changelog)
+<!-- Используйте категории для структурирования изменений.
+`:cl:` необходим для автоматического генератора Changelog.
 -->
 
 :cl:
-- add: Added fun :D
-- tweak: Tweaked fun
-- fix: Fixed fun!
-- remove: Removed fun :(
+- add: Добавлено новое
+- tweak: Улучшено / подправлено
+- fix: Исправлено
+- remove: Удалено
+--- 
+<!-- Благодарим вас за вклад в проект Alt-Space!>
