@@ -1,0 +1,59 @@
+name: Build & Test (Debug)
+
+on:
+  push:
+    branches: [ master, staging, trying ]
+  merge_group:
+  pull_request:
+    types: [ opened, reopened, synchronize, ready_for_review ]
+    branches: [ master ]
+
+jobs:
+  build-debug:
+    if: >
+      github.actor != 'PJBot' &&
+      github.actor != 'DeltaV-Bot' &&
+      github.actor != 'SimpleStation14' &&
+      (github.event.pull_request.draft == false || github.event_name != 'pull_request')
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3.6.0
+
+      - name: Init submodules
+        run: git submodule update --init --recursive
+
+      - name: Pull engine updates
+        uses: space-wizards/submodule-dependency@v0.1.5
+
+      - name: Update engine submodules
+        run: |
+          cd RobustToolbox
+          git submodule update --init --recursive
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3.2.0
+        with:
+          dotnet-version: 9.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build (DebugOpt)
+        run: >
+          dotnet build
+          --configuration DebugOpt
+          --no-restore
+          /p:WarningsAsErrors=nullable
+          /m
+
+      - name: Run tests (DebugOpt)
+        run: >
+          dotnet test
+          Content.Tests/Content.Tests.csproj
+          --no-build
+          --configuration DebugOpt
+          --
+          NUnit.ConsoleOut=0
