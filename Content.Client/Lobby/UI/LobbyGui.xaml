@@ -9,7 +9,7 @@
     xmlns:lobbyUi="clr-namespace:Content.Client.Lobby.UI"
     xmlns:info="clr-namespace:Content.Client.Info"
     xmlns:widgets="clr-namespace:Content.Client.UserInterface.Systems.Chat.Widgets"
-    xmlns:as="clr-namespace:Content.Client._AS.Lobby.Parallax">
+    xmlns:as="clr-namespace:Content.Client._ALTSpace.Lobby.Parallax">
           <!-- ALT-Space add (Parallax): start  -->
     <as:LobbyParallaxControl Name="Background" Access="Public" 
                             VerticalExpand="True" HorizontalExpand="True" />
