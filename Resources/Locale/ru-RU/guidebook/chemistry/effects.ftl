@@ -314,8 +314,8 @@ reagent-effect-guidebook-innoculate-zombie-infection =
 reagent-effect-guidebook-reduce-rotting =
     { $chance ->
         [1] Регенерирует
-       *[other] регенерируют
-    } { NATURALFIXED($time, 3) } { MANY("second", $time) } гниения
+        *[other] регенерируют
+    } {NATURALFIXED($time, 3)} {MANY("second", $time)} гниения
 reagent-effect-guidebook-plant-attribute =
     { $chance ->
         [1] Adjusts
