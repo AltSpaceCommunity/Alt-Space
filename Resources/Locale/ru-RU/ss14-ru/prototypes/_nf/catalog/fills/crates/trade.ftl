@@ -1,0 +1,10 @@
+ent-CrateTradeSecureNormalFilled = Ящик с товарами
+    .suffix = заполненный
+ent-CrateTradeSecureHighFilled = ящик для груза высокой стоимости
+    .suffix = заполненный
+ent-CrateTradeContrabandSecureNormalFilled = { ent-CrateTradeContrabandSecureNormal }
+    .desc = { ent-CrateTradeContrabandSecureNormal.desc }
+ent-CrateTradeContrabandSecureDonkFilled = { ent-CrateTradeContrabandSecureDonk }
+    .desc = { ent-CrateTradeContrabandSecureDonk.desc }
+ent-CrateTradeContrabandSecureCyberSunFilled = { ent-CrateTradeContrabandSecureCyberSun }
+    .desc = { ent-CrateTradeContrabandSecureCyberSun.desc }
