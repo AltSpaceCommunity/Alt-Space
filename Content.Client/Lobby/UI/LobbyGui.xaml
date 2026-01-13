@@ -60,7 +60,7 @@
                                 </BoxContainer>
                             </BoxContainer>
                         </PanelContainer>
-                        <!-- Voting Popups -->*
+                        <!-- Voting Popups -->
                         <BoxContainer Orientation="Vertical" SeparationOverride="4" Name="VoteContainer"
                                       Access="Public" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 8" />
                     </BoxContainer>

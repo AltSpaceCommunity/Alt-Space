@@ -29,12 +29,7 @@ player-join-message = Игрок { $name } зашёл!
 player-first-join-message = Игрок { $name } зашёл на сервер впервые.
 # Displayed in chat to admins when a player leaves
 player-leave-message = Игрок { $name } вышел!
-latejoin-arrival-announcement =
-    { $character } ({ $job }) { $gender ->
-        [male] прибыл
-        [female] прибыла
-       *[other] прибыл
-    } на станцию!
+latejoin-arrival-announcement = {$character} ({$job}) { CONJUGATE-HAVE($entity) } прибывает на станцию!
 latejoin-arrival-announcement-special = { $job } { $character } on deck!
 latejoin-arrival-sender = Станция
 latejoin-arrivals-direction = Вскоре прибудет шаттл, который доставит вас на вашу станцию.
