@@ -7,7 +7,7 @@
 **✨ Далёкий тёмный космос... ✨**
 
 [![GitHub License](https://img.shields.io/github/license/MrPe4henika/Alt-Space?style=for-the-badge)](./LEGAL_RU.md)  [![.NET](https://img.shields.io/badge/.NET-9.0-512BD4?&style=for-the-badge)](https://dotnet.microsoft.com/)  [![Discord](https://img.shields.io/badge/Discord-Join%20Server-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/JpFnEZ99WG)
-
+<img src="https://img.shields.io/github/repo-size/AltSpaceCommunity/Alt-Space?style=for-the-badge&color=rebeccapurple" />
 </div>
 
 ---
