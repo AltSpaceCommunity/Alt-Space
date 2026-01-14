@@ -1,5 +1,6 @@
-﻿- type: guideEntry # Default for forks and stuff. Should not be listed anywhere if the server is using a custom ruleset.
+﻿# ALT-SPACE Rule
+- type: guideEntry
   id: DefaultRuleset
   name: guide-entry-rules
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/DefaultRuleset.xml"
+  text: "/ServerInfo/_ALT-Space/ALTSpaceRuleset.xml"
