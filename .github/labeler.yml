@@ -1,60 +1,51 @@
-"Changes: Audio":
-  - changed-files:
-    - any-glob-to-any-file: "**/*.ogg"
-
-"Changes: C#":
-  - changed-files:
-    - any-glob-to-any-file: "**/*.cs"
-
-"Changes: Config":
+"Карты":
 - changed-files:
   - any-glob-to-any-file:
-    - "**/*.toml"
-    - "**/*.config"
-    - "*.json"
-    - ".github/*.yml"
-    - ".github/*.json"
-    - ".vscode/*.json"
-    - ".editorconfig"
+    - "Resources/Maps/**/*.yml" # Grid Files
+    - "Resources/Prototypes/Maps/**/*.yml" # Prototypes Files
+    - "Resources/Prototypes/**/Maps/**/*.yml" # Prototypes Files
 
-"Changes: Documentation":
-  - changed-files:
-    - any-glob-to-any-file:
-      - "**/*.xml"
-      - "**/*.md"
+"Текстуры":
+- changed-files:
+  - any-glob-to-any-file:
+    - "**/*.rsi/*.png"
+    - "**/*.rsi/*.json"
 
-"Changes: Localization":
-  - changed-files:
-    - any-glob-to-any-file: 'Resources/Locale/**/*.ftl'
+"UI":
+- changed-files:
+  - any-glob-to-any-file: "**/*.xaml*"
 
-"Changes: Map":
-  - changed-files:
-    - any-glob-to-any-file:
-      - "Resources/Maps/**/*.yml"
-      - "Resources/Prototypes/Maps/**/*.yml"
+"C#":
+- changed-files:
+  - any-glob-to-any-file: "**/*.cs"
 
-"Changes: Sprite":
-  - changed-files:
-    - any-glob-to-any-file:
-      - "**/*.rsi/*.png"
-      - "**/*.rsi/*.json"
+"Шейдеры":
+- changed-files:
+  - any-glob-to-any-file: '**/*.swsl'
 
-"Changes: UI":
-  - changed-files:
-    - any-glob-to-any-file: "**/*.xaml*"
+"Звук":
+- changed-files:
+  - any-glob-to-any-file: '**/*.ogg'
 
-"Changes: YML":
+"Документация":
+- changed-files:
+  - any-glob-to-any-file:
+    - "**/*.xml"
+    - "**/*.md"
+
+"Переводы":
+- changed-files:
+  - any-glob-to-any-file: "Resources/Locale/**/*.ftl"
+
+"YML":
+- all:
   - changed-files:
-    - any-glob-to-any-file:
-      - "**/*.yml"
-    - all-globs-to-all-files:
+    - any-glob-to-any-file: "**/*.yml"
+    - all-globs-to-any-file:
       - "!Resources/Maps/**/*.yml"
       - "!Resources/Prototypes/Maps/**/*.yml"
+      - "!Resources/Prototypes/**/Maps/**/*.yml"
 
-"Changes: Workflow":
-  - changed-files:
-    - any-glob-to-any-file: ".github/workflows/*.yml"
-
-"Changes: Changes Upstream":
-  - changed-files:
-    - any-glob-to-any-file: "!**/_Crescent/**"
+"База Данных":
+- changed-files:
+  - any-glob-to-any-file: "Content.Server.Database/Migrations/**/*.cs"
