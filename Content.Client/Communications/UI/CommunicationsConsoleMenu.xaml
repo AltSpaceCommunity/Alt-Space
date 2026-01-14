@@ -54,6 +54,7 @@
 
                 <Button Name="EmergencyShuttleButton"
                     Access="Public"
+                    Visible="False"
                     Text="Placeholder Text"
                     ToolTip="{Loc 'comms-console-menu-emergency-shuttle-button-tooltip'}"/>
             </BoxContainer>

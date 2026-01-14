@@ -41,3 +41,6 @@ enabled = false
 
 [rules]
 exempt_local = true
+
+[ooc]
+enable_during_round = true

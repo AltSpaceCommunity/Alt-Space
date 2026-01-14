@@ -7,3 +7,5 @@ ui-lobby-ready-up-button = Готовность
 ui-lobby-online-players-block = Текущие игроки
 ui-lobby-server-info-block = Серверная информация
 ui-lobby-manifest-button = Манифест
+
+ui-lobby-text-warning = Это эксперементальный проект! 
