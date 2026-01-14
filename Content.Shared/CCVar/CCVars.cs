@@ -11,7 +11,6 @@ namespace Content.Shared.CCVar;
 /// <remarks>
 /// NOTICE FOR FORKS: Put your own CVars in a separate file with a different [CVarDefs] attribute. RT will automatically pick up on it.
 /// </remarks>
-[CVarDefs]
 public sealed partial class CCVars : CVars
 {
     // Only debug stuff lives here.
