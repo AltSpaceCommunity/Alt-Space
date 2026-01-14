@@ -263,21 +263,3 @@
   - type: Construction
     graph: WindowDiagonal
     node: windowDiagonal
-
-# RCD-resistant variant of Window
-- type: entity
-  id: WindowRCDResistant
-  parent: Window
-  abstract: true
-  components:
-  - type: RCDDeconstructable
-    deconstructable: false
-
-# RCD-resistant variant of WindowDirectional
-- type: entity
-  id: WindowDirectionalRCDResistant
-  parent: WindowDirectional
-  abstract: true
-  components:
-  - type: RCDDeconstructable
-    deconstructable: false
