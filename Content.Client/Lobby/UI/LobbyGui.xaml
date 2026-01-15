@@ -59,13 +59,11 @@
                     </BoxContainer>
                     <Control VerticalExpand="True" />
                     
-                    <!-- Перенесенная панель: Предупреждение + Кнопка Прогресса -->
                     <BoxContainer Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" SeparationOverride="10">
                         <PanelContainer StyleClasses="AngleRect">
                             <Label Text="{Loc 'ui-lobby-text-warning'}" FontColorOverride="{x:Static maths:Color.Orange}" Margin="8 4" />
                         </PanelContainer>
 
-                        <!-- Кнопка Прогресса (теперь желтая и рядом) -->
                         <Button Name="RoadmapButton" 
                                 Access="Public" 
                                 Text="Планы разработки" 

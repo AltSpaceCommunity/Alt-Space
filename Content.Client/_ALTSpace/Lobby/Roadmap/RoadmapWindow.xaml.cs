@@ -41,7 +41,6 @@ namespace Content.Client._ALTSpace.Lobby.Roadmap
                     StyleClasses = { "LabelHeading" }
                 });
 
-                // Описание (Исправлено: SetMessage возвращает void, поэтому вызываем отдельно)
                 var description = new RichTextLabel
                 {
                     Margin = new Thickness(5, 0)
@@ -49,7 +48,6 @@ namespace Content.Client._ALTSpace.Lobby.Roadmap
                 description.SetMessage(proto.Description);
                 container.AddChild(description);
 
-                // Полоска прогресса (Исправлено: MinSize вместо CustomMinimumSize)
                 var bar = new ProgressBar
                 {
                     MinValue = 0,
@@ -57,10 +55,8 @@ namespace Content.Client._ALTSpace.Lobby.Roadmap
                     Value = proto.Progress,
                     MinSize = new Vector2(0, 20)
                 };
-                // Цвет (Исправлено: добавлен нужный using)
                 bar.ForegroundStyleBoxOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#fddb00") };
                 container.AddChild(bar);
-                // Разделитель (Исправлено: прямое обращение к классу HLine)
                 container.AddChild(new Content.Client.UserInterface.Controls.HLine
                 {
                     Thickness = 1,

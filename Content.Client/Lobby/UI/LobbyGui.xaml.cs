@@ -13,7 +13,7 @@ namespace Content.Client.Lobby.UI
     {
         [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
 
-        // _ALT-Space add: ссылка для предотвращения дублирования окон
+        // _ALT-Space add
         private RoadmapWindow? _roadmapWindow;
 
         public LobbyGui()
@@ -28,7 +28,7 @@ namespace Content.Client.Lobby.UI
 
             LeaveButton.OnPressed += _ => _consoleHost.ExecuteCommand("disconnect");
             OptionsButton.OnPressed += _ => UserInterfaceManager.GetUIController<OptionsUIController>().ToggleWindow();
-            // _ALT-Space add start: исправленная логика открытия
+            // _ALT-Space add start
             RoadmapButton.OnPressed += _ => 
             {
                 if (_roadmapWindow != null && !_roadmapWindow.Disposed && _roadmapWindow.IsOpen)
