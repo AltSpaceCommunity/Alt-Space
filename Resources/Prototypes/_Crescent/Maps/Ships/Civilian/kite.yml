@@ -22,6 +22,10 @@
     Kite:
       stationProto: StandardCrescentExpeditionVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: civilian
         - type: StationNameSetup
           mapNameTemplate: 'ICM Kite {1}'
           nameGenerator:
