@@ -807,7 +807,7 @@ entities:
     - type: VesselIcon
       iffIcon:
         sprite: _Crescent/ShipIcons/ifficons.rsi
-        state: industrial
+        state: corvette
     - type: BecomesStation
       id: Mercurymk2
     - type: SelfDeleteGrid
