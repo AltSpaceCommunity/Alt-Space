@@ -1,0 +1,6 @@
+- type: roadmap
+  id: UIUP
+  title: "Переработка Лобби"
+  description: "Изменение визуального стиля, улучшение и обновление Лобби"
+  progress: 15
+  category: "UI"

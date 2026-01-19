@@ -1,0 +1,14 @@
+<DefaultWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    Title="Планы разработки (Roadmap)"
+    Resizable="True"
+    SetSize="600 450">
+    <BoxContainer Orientation="Vertical" Margin="10" SeparationOverride="10">
+        <Label Text="Текущий прогресс сервера" StyleClasses="LabelHeadingBigger" HorizontalAlignment="Center" />
+        
+        <ScrollContainer VerticalExpand="True">
+            <BoxContainer Name="RoadmapList" Orientation="Vertical" SeparationOverride="15" Margin="5" />
+        </ScrollContainer>
+    </BoxContainer>
+</DefaultWindow>
