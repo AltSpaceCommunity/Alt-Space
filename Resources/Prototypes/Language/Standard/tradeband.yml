@@ -3,7 +3,7 @@
   isVisibleLanguage: true
   speech:
     color: "#8ac451"
-    fontId: NovaFlat
+    fontId: Default
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
