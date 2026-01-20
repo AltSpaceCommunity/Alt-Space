@@ -1,3 +1,3 @@
-shipyard-console-menu-title = Shipyard Console
-shipyard-console-error = Temporary embargo is in place, try later?
-shipyard-console-docking = { $vessel } is en route to the station, eta 60 seconds.
+shipyard-console-menu-title = Консоль верфи
+shipyard-console-error = Введено временное эмбарго, попробуйте позже.
+shipyard-console-docking = { $vessel } на пути к станции, расчетное время прибытия - 60 секунд.
