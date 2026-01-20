@@ -656,7 +656,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         // Null config means we didn't dock and had to park nearby.
         if (config == null)
         {
-            _chat.TrySendInGameICMessage(chatter, "Your ship has been towed in local station space. Fly to it using a jetpack and a mass scanner!", InGameICChatType.Speak, false);
+            _chat.TrySendInGameICMessage(chatter, "Ваш корабль был отбуксирован в местный сектор станции. Доберитесь до него, используя джетпак и сканер массы!", InGameICChatType.Speak, false);
             return;
         }
 
